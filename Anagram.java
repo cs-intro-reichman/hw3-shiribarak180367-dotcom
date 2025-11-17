@@ -29,32 +29,25 @@ public class Anagram {
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
 		  boolean isAnagram = true ;
-		      str1 = preProcess(str1);
+	          str1 = preProcess(str1);
 			  str2 = preProcess(str2);
-			 if(str1.length() != str2.length()){
+			 if(str1.length()!= str2.length()){
 				return false;
 			 }
-			  str1 = preProcess(str1);
-			  str2 = preProcess(str2);
-		
 		   for( int i =0 ; i< str1.length(); i++ ){
             for( int j =0 ; j< str2.length(); j++ ){
 					if (str1.charAt(i) ==str2.charAt(j) ){
-						str2 =str2.substring(0, j) + "*" + str2.substring(j + 1);
+						str2 =str2.substring(0, j)  + str2.substring(j + 1);
 						break;
 					}
-					if ( j == str2.length() ){
-				
-						return false;
-
-					}
-					if (str1.length()!= str2.length()){
+					if ( j== str2.length()){
 						return false;
 					}
-
 				}
-			}
-		
+			
+
+					}
+				
 		return isAnagram;
 	}
 
