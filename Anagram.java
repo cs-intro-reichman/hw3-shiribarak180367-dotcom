@@ -35,18 +35,19 @@ public class Anagram {
 				return false;
 			 }
 		   for( int i =0 ; i< str1.length(); i++ ){
-            for( int j =0 ; j< str2.length(); j++ ){
-					if (str1.charAt(i) ==str2.charAt(j) ){
-						str2 =str2.substring(0, j)  + str2.substring(j + 1);
-						break;
-					}
-					if ( j== str2.length()){
-						return false;
-					}
-				}
-			
+             char charToFind = str1.charAt(i);
+			 int indexIn2 = str2.indexOf(charToFind);
+			 if(indexIn2 == -1){
+				return false;
+			 }
+			 else{
+				String part1 = str2.substring(0,indexIn2);
+				String part2 = str2.substring(indexIn2+ 1);
+				str2 = part1 + part2 ;
 
 					}
+				}
+				
 				
 		return isAnagram;
 	}
